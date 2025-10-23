@@ -1,0 +1,279 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyN7XTNYi/qeQNxca72nmOlE",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/irwansaputrapanggabean237-ai/PEMROGRAMAN-DASAR/blob/main/pertemuan%206\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "x58eQke3wkO0",
+        "outputId": "a0a96cf3-3165-4950-fd69-9f342d966bd2"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "===== BIODATA PRAKTIKAN =====\n",
+            "Nama        : irwan saputra panggabean\n",
+            "NIM         : 4232411028\n",
+            "Prodi      : RPE\n",
+            "Kelas      : A malam\n",
+            "Hobi       : mancing, main game dan bersepeda\n",
+            "==============================\n"
+          ]
+        }
+      ],
+      "source": [
+        "def Biodata():\n",
+        "  \"\"\"Menampilkan biodata lengkap praktikan.\"\"\"\n",
+        "  print(\"===== BIODATA PRAKTIKAN =====\")\n",
+        "  print(\"Nama        : irwan saputra panggabean\")\n",
+        "  print(\"NIM         : 4232411028\")\n",
+        "  print (\"Prodi      : RPE\")\n",
+        "  print (\"Kelas      : A malam\")\n",
+        "  print( \"Hobi       : mancing, main game dan bersepeda\")\n",
+        "  print(\"==============================\")\n",
+        "\n",
+        "Biodata()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def hitung_volume_balok(panjang, lebar, tinggi):\n",
+        "    \"\"\"menghitung volume balok dari panjang, lebar, dan tinggi.\"\"\"\n",
+        "    return panjang * lebar * tinggi\n",
+        "\n",
+        "p = 10\n",
+        "l = 5\n",
+        "t = 4\n",
+        "print(f\"Volume balok dengan panjang {p}, lebar {1}, dan tinggi {t} adalah: {hitung_volume_balok(p, 1, t)}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "yTFB5UG4zg9n",
+        "outputId": "f985fb04-8a5e-4cb9-a624-60986b3eeca2"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Volume balok dengan panjang 10, lebar 1, dan tinggi 4 adalah: 40\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def hitung_rata_rata(data_nilai):\n",
+        "    \"\"\"Menghitung rata-rata dari list angka menggunakan perulangan for dan pengecekan nilai.\"\"\"\n",
+        "    total = 0\n",
+        "    jumlah_data = 0\n",
+        "\n",
+        "    for nilai in data_nilai:\n",
+        "        if 0 <= nilai <= 100:\n",
+        "            total += nilai\n",
+        "            jumlah_data += 1\n",
+        "        else:\n",
+        "            print(f\"Nilai {nilai} tidak valid dan tidak dihitung dalam rata-rata.\")\n",
+        "    if jumlah_data > 0:\n",
+        "        return total / jumlah_data\n",
+        "    return 0\n",
+        "\n",
+        "nilai_praktikan = [85, 78, 92, 65, 90, 110, -5]\n",
+        "print (f\"Nilai rata-rata kelas adalah: {hitung_rata_rata(nilai_praktikan)}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0-lxZRO40lEB",
+        "outputId": "f0ab96e9-dcf6-4725-fbe1-23c3f1fb0880"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Nilai 110 tidak valid dan tidak dihitung dalam rata-rata.\n",
+            "Nilai -5 tidak valid dan tidak dihitung dalam rata-rata.\n",
+            "Nilai rata-rata kelas adalah: 82.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def tentukan_predikat(skor):\n",
+        "    \"\"\"Menentukan predikat (A, B, C, D, E) berdasarkan skor dengan pengecekan tipe data.\"\"\"\n",
+        "\n",
+        "    if not isinstance(skor, (int, float)):\n",
+        "        return \"Error: Input harus berupa angka.\"\n",
+        "    if skor >= 85:\n",
+        "        return \"A\"\n",
+        "    elif skor >= 70:\n",
+        "        return \"B\"\n",
+        "    elif skor >= 60:\n",
+        "        return \"C\"\n",
+        "    elif skor >= 50:\n",
+        "        return \"D\"\n",
+        "    elif skor >= 0:\n",
+        "        return \"E\"\n",
+        "    else:\n",
+        "        return \"Error: Skor tidak boleh negatif.\"\n",
+        "\n",
+        "print(f\"Skor 75 mendapat predikat: {tentukan_predikat (75)}\")\n",
+        "print (f\"Skor 48 mendapat predikat: {tentukan_predikat (48)}\")\n",
+        "print(f\"Skor 'abc' mendapat predikat: {tentukan_predikat ('abc')}\")\n",
+        "print (f\"Skor -10 mendapat predikat: {tentukan_predikat (-10)}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "D_-ibaO-1nr2",
+        "outputId": "6d7b22a7-541f-413a-9161-20702ae0bc53"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Skor 75 mendapat predikat: B\n",
+            "Skor 48 mendapat predikat: E\n",
+            "Skor 'abc' mendapat predikat: Error: Input harus berupa angka.\n",
+            "Skor -10 mendapat predikat: Error: Skor tidak boleh negatif.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def hitung_faktorial(n):\n",
+        "    \"\"\"Menghitung faktorial dari bilangan positif n dengan penanganan kasus khusus.\"\"\"\n",
+        "\n",
+        "    if n < 0:\n",
+        "        return \"Error: Faktorial tidak terdefinisi untuk bilangan negatif.\"\n",
+        "    elif n == 0:\n",
+        "        return 1\n",
+        "\n",
+        "    hasil = 1\n",
+        "\n",
+        "    while n > 1:\n",
+        "        hasil *= n\n",
+        "        n -= 1  # Corrected from T to 1\n",
+        "    return hasil\n",
+        "\n",
+        "bilangan_n = 4 # Defined the variable\n",
+        "print (f\"Faktorial dari {bilangan_n} adalah: {hitung_faktorial (bilangan_n)}\") # Corrected function name\n",
+        "print(f\"Faktorial dari 0 adalah: {hitung_faktorial (0)}\") # Corrected function name\n",
+        "print (f\"Faktorial dari -3 adalah: {hitung_faktorial(-3)}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "LLHRx_913S0f",
+        "outputId": "4fc530de-c2b5-4302-a77a-32c7b111b8eb"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Faktorial dari 4 adalah: 24\n",
+            "Faktorial dari 0 adalah: 1\n",
+            "Faktorial dari -3 adalah: Error: Faktorial tidak terdefinisi untuk bilangan negatif.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def analisis_suhu(data_suhu, batas_panas=35, batas_dingin=15):\n",
+        "    \"\"\"Menghitung jumlah hari Panas dan Dingin dari data_suhu dengan batas suhu yang dapat diatur.\"\"\"\n",
+        "\n",
+        "    panas_count = 0\n",
+        "    dingin_count = 0\n",
+        "\n",
+        "    for suhu in data_suhu:\n",
+        "        if suhu >= batas_panas:\n",
+        "            panas_count += 1\n",
+        "        elif suhu <= batas_dingin:\n",
+        "             dingin_count += 1\n",
+        "    return panas_count, dingin_count\n",
+        "\n",
+        "suhu_mingguan = [36, 30, 14, 25, 38, 16, 28]\n",
+        "jumlah_panas, jumlah_dingin = analisis_suhu(suhu_mingguan)\n",
+        "print(f\"Jumlah hari Panas (>=35°C): {jumlah_panas}\")\n",
+        "print(f\"Jumlah hari Dingin (<=15°C): {jumlah_dingin}\")\n",
+        "\n",
+        "jumlah_panas2, jumlah_dingin2 = analisis_suhu(suhu_mingguan, batas_panas=33, batas_dingin=18)\n",
+        "print(f\"\\nDengan batas baru (Panas>=33, Dingin<=18):\")\n",
+        "print(f\"Hari Panas: {jumlah_panas2}\")\n",
+        "print(f\"Hari Dingin: {jumlah_dingin2}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "C2bRn73H5hZK",
+        "outputId": "a1190636-a902-43c1-c6b1-d82dcaa4f404"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Jumlah hari Panas (>=35°C): 2\n",
+            "Jumlah hari Dingin (<=15°C): 1\n",
+            "\n",
+            "Dengan batas baru (Panas>=33, Dingin<=18):\n",
+            "Hari Panas: 2\n",
+            "Hari Dingin: 2\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
